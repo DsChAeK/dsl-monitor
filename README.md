@@ -1,9 +1,13 @@
 # DSL Monitor
 This is a simple website + PHP script to monitor your FRITZ!Box DSL info online.
+You can select a date range and you can zoom in over multiple charts.
+
 I'm using a FRITZ!Box 7362 SL (UI) with FRITZ!OS 06.20 and german webinterface.
 You may need to modify the sources for other languages or OS versions.
 It's running on my Odroid C1 with Ubuntu 14.04.
 
+Here you can see my DSL line before and after my troubles.
+![Alt text](https://github.com/DsChAeK/dsl-monitor/blob/master/screenshot.jpg "screenshot")
 
 ## Info
 * Author:        DsChAeK
