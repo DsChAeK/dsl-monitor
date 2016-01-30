@@ -47,11 +47,12 @@ ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFT
     global $start_datetime;
     global $end_datetime;
     
+    global $start_index;
+    global $end_index;
+    
     global $time_offset;
     global $show_last_days;
-   
-	  $row = 1;		
-	  		  
+     		  
 		// format to mikroseconds and set timeoffset
 		if ($start != 0)
 		{
@@ -63,102 +64,108 @@ ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFT
 		  $end = ($end + $time_offset) * 1000;
 		}
 
-		// Open file
-		if (($handle = fopen($filename, "r")) !== FALSE) 
-		{      
-		  // Read header
-		  fgetcsv($handle, 0, ",");
-	
-		  // Read data
-		  while (($data = fgetcsv($handle, 0, ",")) !== FALSE) 
-		  {	  	
-	      if ($row == 1)
-	      {	      		        	        
-       	  // Select Start
-	        if ($start == 0)
-	        {	        		      	  
-	      	  // Show last days?
-	      	  if ($show_last_days == 0)
-	      	  {
-	      	  	// From beginning
-	      	    $start_datetime = $data[0];	      	  		      	  
-	      	  }
-	      	  else
-	      	  {
-	      	  	// Last days
-	      	    $start_datetime = (time() - (60*60*24*$show_last_days) + $time_offset) * 1000;
-	      	  }
-	      	}
-	      	else
-	      	{	    
-	      		// User defined  		        	          
-	          $start_datetime = $start;	        	        	        
-	        }
-	      
-		      // Select End
-	      	if ($end != 0)
-	      	{
-	      		// User defined
-	      		$end_datetime = $end;
-	      	}
-	      	  
-          // Min always the first entry
-       	  $min_datetime = $data[0];       	
-	      }
-	      
-	      // Max always the last entry
-      	$max_datetime = $data[0];      	   	      	
-      	
-      	if ($end == 0)
-      	{
-      		// Set End to Max
-      	  $end_datetime = $max_datetime;
-      	}
-      	 
-      	// Row count
-      	$row++; 
-      	
-        // Skip entries out of range
-    		if ((floatval($data[0]) < floatval($start_datetime)) || 
-    		    (floatval($data[0]) > floatval($end_datetime)))
-    		{     
-    			continue;	      			
-    		}
-      	     	   		      
-	      // Stoerabstandsmarge (SNR)
-	      $logline0 .= '['.$data[0].','.$data[9].'],';   
-	      $logline1 .= '['.$data[0].','.$data[10].'],';
-	      
-	      // Leitungskapazitaet  	      
-	      $logline2 .= '['.$data[0].','.$data[7].'],';   
-	      $logline3 .= '['.$data[0].','.$data[8].'],';
-	      
-	      // Disconnects (-> No IP)
-	      if (strlen ($data[23]) > 1)
-	      {
-	        $logline4 .= '['.$data[0].',1],';
-	      }
-	      else
-	      {
-	       	$logline4 .= '['.$data[0].',0],';
-	      }
-	      
-	      // Auslastung
-	      $logline5 .= '['.$data[0].','.$data[22].'],';   
-				$logline6 .= '['.$data[0].','.$data[21].'],';			          				
-	    }
-	       
-	    fclose($handle);
-	
-	    $logline0 .= '];';
-	    $logline1 .= '];';
-	    $logline2 .= '];';
-	    $logline3 .= '];';
-	    $logline4 .= '];';
-	    $logline5 .= '];';
-	    $logline6 .= '];';	    
-	   }   
-	 }
+    // Set file content
+		$fcontents = file($filename);    
+    
+    // Min date always the first entry
+ 	  $min_datetime = str_getcsv($fcontents[1], ",")[0];
+ 	  
+    // Max date always the last entry   
+    $max_datetime = str_getcsv($fcontents[count($fcontents)-1], ",")[0];
+ 	  
+    // Selected start date
+    if ($start == 0)
+    {	        		      	  
+  	  // Show last days?
+  	  if ($show_last_days == 0)
+  	  {
+  	  	// Date from first line
+  	    $start_datetime = $min_datetime;
+  	  }
+  	  else
+  	  {
+  	  	// Last days
+  	    $start_datetime = (time() - (60*60*24*$show_last_days) + $time_offset) * 1000;
+  	  }
+  	}
+  	else
+  	{	    
+  		// User defined start date        	          
+      $start_datetime = $start;	        	        	        
+    }
+ 	  
+ 	  // Selected end date
+ 	  if ($end != 0)
+  	{
+  		// User defined end date
+  		$end_datetime = $end;
+  	}
+  	else
+  	{
+  		// Date from last line
+  		$end_datetime = $max_datetime;
+    }          
+ 	   
+ 	  // Find line indizes for start/end date from last line on backwards
+ 	  $start_index = 1;
+ 	  $end_index = count($fcontents)-1;
+    
+    for ($i = count($fcontents)-1; $i >= 0; $i--)
+		{
+			// Get csv parsed line
+      $data = str_getcsv($fcontents[$i], ",");   
+     		
+			// Stop if start date index is reached
+  		if (floatval($data[0]) < floatval($start_datetime))
+  		{          			
+  			$start_index = $i;
+  			break;
+  		}
+  		
+  		// Save last end date index
+  		if (floatval($data[0]) > floatval($end_datetime))
+  		{ 
+  			$end_index = $i;  			
+  		}  		
+		}
+ 	  	  
+	  // Read data
+    for ($i = $start_index; $i < $end_index; $i++)
+		{		 
+			// Get csv parsed line
+      $data = str_getcsv($fcontents[$i], ",");         	      	               	   	      	    	      
+    	    	     	   		      
+      // Stoerabstandsmarge (SNR)
+      $logline0 .= '['.$data[0].','.$data[9].'],';   
+      $logline1 .= '['.$data[0].','.$data[10].'],';
+      
+      // Leitungskapazitaet  	      
+      $logline2 .= '['.$data[0].','.$data[7].'],';   
+      $logline3 .= '['.$data[0].','.$data[8].'],';
+      
+      // Disconnects (-> No IP)
+      if (strlen ($data[23]) > 1)
+      {
+        $logline4 .= '['.$data[0].',1],';
+      }
+      else
+      {
+       	$logline4 .= '['.$data[0].',0],';
+      }
+      
+      // Auslastung
+      $logline5 .= '['.$data[0].','.$data[22].'],';   
+			$logline6 .= '['.$data[0].','.$data[21].'],';			          				
+    } 
+
+    $logline0 .= '];';
+    $logline1 .= '];';
+    $logline2 .= '];';
+    $logline3 .= '];';
+    $logline4 .= '];';
+    $logline5 .= '];';
+    $logline6 .= '];';    
+	}   
 ?>
 
 <?php 
@@ -174,8 +181,10 @@ ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFT
 	echo "end: ".$end_datetime.'<br>';    
 	echo "min: ".$min_datetime.'<br>';
 	echo "max: ".$max_datetime.'<br>';      
-	echo "time_offset: ".$time_offset.'<br>';      
+	echo "time_offset: ".$time_offset.'<br>';      	
+	echo "start_index: ".$start_index." end_index: ".$end_index.'<br>';      
 */
+
 ?> 
 	
 <html>	
