@@ -12,7 +12,7 @@ Here you can see my DSL line before and after my troubles.
 ## Info
 * Author:        DsChAeK
 
-* Version:       v1.0
+* Version:       v2.0
 
 * License:     Copyright (c) 2015 by DsChAeK
 
@@ -26,6 +26,13 @@ Here you can see my DSL line before and after my troubles.
         OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING FROM LOSS OF USE,
         DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS
         ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
+
+## Changes
+v2.0, 30.01.2016
+* Optimized for short time ranges with big data
+
+v1.0, 04.10.2015
+* First release
 
 ## Contribution
 I used and modified code from some hard workers:
@@ -109,7 +116,3 @@ You should have some basic knowledge of linux and stuff!
   * Load data over multiple logfiles
   * One zoom reset button for all charts and better performance of that
   * Display more DSL info or/and make charts more user configurable
-    
-## Changes
-v1.0, 04.10.2015
-* First release
