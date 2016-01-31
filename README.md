@@ -28,6 +28,12 @@ Here you can see my DSL line before and after my troubles.
         ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 
 ## Changes
+v2.1, 31.01.2016
+* fixed start_index if start_date wasn't found
+* added DSLAM info to data log
+* added regex data example
+* updated dsl_mon_example.log
+
 v2.0, 30.01.2016
 * Optimized for short time ranges with big data
 
