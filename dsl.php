@@ -90,6 +90,7 @@ ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFT
   $ip           = 'IP';
   $dns1         = 'DNS1';
   $dns2         = 'DNS2';
+  $dslam        = 'DSLAM';
 
   // Build header for file
   $header = $datetime.','.         // 0
@@ -117,7 +118,8 @@ ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFT
             $dl.','.               // 22
             $ip.','.               // 23
             $dns1.','.             // 24
-            $dns2;                 // 25
+            $dns2.','.             // 25
+            $dslam;                // 26
 
 //################ RegEx ##############################################################################################
 
@@ -205,11 +207,29 @@ ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFT
 
   if (preg_match ('/.*?IP-Adresse: (.*?)<\/span>.*?\n.*?\n.*?\n<td class="tdinfo">(.*?) .*?<br>(.*?) /', $html, $hits))
   {
-     $logline .= $hits[1].','.$hits[2].','.$hits[3];
+     $logline .= $hits[1].','.$hits[2].','.$hits[3].',';
   }
   else
   {
-         $logline .= '0,0,0';
+     $logline .= '0,0,0,';
+  }
+
+  // DSLAM
+/* 
+					1.	[43-51]	`Broadcom`
+					2.	[55-61]	`164.97`
+					3.	[65-77]	`B5004244434D`
+					4.	[81-89]	`7631302E`
+					5.	[93-95]	`00`
+  */
+
+  if (preg_match ('/.*?"dslam": "(.*?)<br>(.*?)<br>(.*?)<br>(.*?)<br>(.*?)", /', $html, $hits))
+  {
+     $logline .= $hits[1].' '.$hits[2].' '.$hits[3].' '.$hits[4].' '.$hits[5];
+  }
+  else
+  {
+     $logline .= '0';
   }
 
 //#####################################################################################################################

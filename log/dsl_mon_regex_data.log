@@ -1,0 +1,1516 @@
+string(45087) "<h4>Ausgehandelte Verbindungseigenschaften</h4><table id="Table1" class="zebra"><tr>
+<th class="c1"></th>
+<th class="c2"></th>
+<th class="c3h">Empfangsrichtung</th>
+<th class="c4h">Senderichtung</th>
+</tr>
+<tr><td class="c1">DSLAM-Datenrate Max.</td><td class="c2">kbit/s</td><td class="c3">109344</td><td class="c4">42000</td></tr><tr><td class="c1">DSLAM-Datenrate Min.</td><td class="c2">kbit/s</td><td class="c3">720</td><td class="c4">368</td></tr><tr><td class="c1">Leitungskapazität</td><td class="c2">kbit/s</td><td class="c3">95526</td><td class="c4">25546</td></tr><tr><td class="c1">Aktuelle Datenrate</td><td class="c2">kbit/s</td><td class="c3">95526</td><td class="c4">25137</td></tr><tr><td class="c1">Nahtlose Ratenadaption</td><td class="c2"></td><td class="c3">aus</td><td class="c4">aus</td></tr><tr>
+<td class="c1">&nbsp;</td><td class="c2"></td><td class="c3"></td><td class="c4"></td></tr><tr><td class="c1">Latenz</td><td class="c2"></td><td class="c3">fast</td><td class="c4">5 ms</td></tr><tr><td class="c1">Impulsstörungsschutz</td><td class="c2"></td><td class="c3">29</td><td class="c4">0</td></tr><tr><td class="c1">G.INP</td><td class="c2"></td><td class="c3">an</td><td class="c4">aus</td></tr>
+<tr>
+<td class="c1">&nbsp;</td><td class="c2"></td><td class="c3"></td><td class="c4"></td></tr><tr><td class="c1">Störabstandsmarge</td><td class="c2">dB</td><td class="c3">5</td><td class="c4">6</td></tr><tr><td class="c1">Trägertausch (Bitswap)</td><td class="c2"></td><td class="c3">an</td><td class="c4">an</td></tr><tr><td class="c1">Leitungsdämpfung</td><td class="c2">dB</td><td class="c3">10</td><td class="c4">10</td></tr><tr>
+<td class="c1">&nbsp;</td><td class="c2"></td><td class="c3"></td><td class="c4"></td></tr><tr><td class="c1">Profil</td><td class="c2">17a</td><td class="c3"></td><td class="c4"></td></tr><tr><td class="c1">G.Vector</td><td class="c2"></td><td class="c3">full</td><td class="c4">full</td></tr>
+<tr>
+<td class="c1">&nbsp;</td><td class="c2"></td><td class="c3"></td><td class="c4"></td></tr><tr><td class="c1">Trägersatz</td><td class="c2"></td><td class="c3">B43</td><td class="c4">B43</td></tr></table><br>
+<h4>Fehlerzähler</h4>
+<table id="Table2" class="zebra_reverse"><tr>
+<th class="c1 "></th>
+<th class="c2 hint" colspan="2">Sekunden mit</th>
+<th class="c4 hint" colspan="2">Nicht behebbare Fehler (CRC)</th></tr>
+<tr>
+<th class="c1"></th>
+<th class="c2">Fehlern (ES)</th>
+<th class="c3">vielen<br />Fehlern (SES)</th>
+<th class="c4">pro<br />Minute</th>
+<th class="c5">letzte<br />15 Minuten</th></tr>
+<tr>
+<td class="c1">FRITZ!Box</td>
+<td class="c2">2</td>
+<td class="c3">0</td>
+<td class="c4">0.03</td>
+<td class="c5">3</td></tr>
+<tr>
+<td class="c1">Vermittlungsstelle</td>
+<td class="c2">4</td>
+<td class="c3">0</td><td class="c4">0.07</td>
+<td class="c5">2</td>
+</tr></table>
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv=content-type content="text/html; charset=utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title></title>
+<link rel="stylesheet" type="text/css" href="/css/default/main.css"/>
+<link rel="stylesheet" type="text/css" href="/css/default/sso_dropdown.css"/>
+<link rel="stylesheet" type="text/css" href="/css/default/print.css" media="print"/>
+<!--[if lte IE 8]>
+<link rel="stylesheet" type="text/css" href="/css/default/ie_fix.css"/>
+<![endif]-->
+<!--[if IE]>
+<style type="text/css">
+.hide_ftp_link {display: none;}
+</style>
+<![endif]-->
+<script type="text/javascript" src="/js/jxl.js"></script>
+<script type="text/javascript" src="/js/ready.js"></script>
+<script type="text/javascript" src="/js/help.js"></script>
+<script type="text/javascript" src="/js/popup.js?lang=de"></script>
+<script type="text/javascript" src="/js/zebra.js"></script>
+<script type="text/javascript" src="/js/ajax.js"></script>
+<script type="text/javascript" src="/js/sso_dropdown.js"></script>
+<!--[if lt IE 8]>
+<script type="text/javascript" src="/js/imgbuttonfixer.js"></script>
+<![endif]-->
+<script type="text/javascript">
+
+if (window.location.search.indexOf("&popupwnd=1")!=-1) {
+ready.onReady(popup.prepareHeader);
+}
+ready.onReady(help.show);
+ready.onReady(zebra);
+</script>
+
+<style type="text/css">
+#tInternetMonitor {
+margin-top: 5px;
+width:100%;
+}
+#tInternetMonitor td {
+vertical-align:top;
+}
+#tInternetMonitor .led_green, #tInternetMonitor .led_red, #tInternetMonitor .led_gray {
+background-position:center top;
+height:16px;
+}
+.qos_back {
+height:170px;
+width:100%;
+position:relative;
+margin-top: 40px;
+}
+.qos_back div.downstream_logo,
+.qos_back div.upstream_logo {
+position: absolute;
+width: 47px;
+height: 45px;
+top:97px;
+left:557px;
+}
+.qos_back div.downstream_logo {
+background-image: url(/css/default/images/pc_downstream.gif);
+}
+.qos_back div.upstream_logo {
+background-image: url(/css/default/images/pc_upstream.gif);
+}
+.qos {
+height: 110px;
+width: 451px;
+margin: 0;
+padding: 0;
+position:absolute;
+left:61px;
+top:28px;
+background-color: #ffffff;
+border: solid 1px #747674;
+}
+.qos div.column {
+position: relative;
+height: 110px;
+float: left;
+margin: 0;
+padding: 0;
+}
+.qos div.func {
+position: absolute;
+left: 0px;
+bottom: 0px;
+width: 0px;
+line-height: 0;
+border: solid 0px transparent;
+}
+.qos_back h4.qos_title {
+position:absolute;
+top:-20px;
+left:60px;
+text-align: center;
+width:437px;
+}
+.qos_back table.prio_legend {
+background-color:transparent;
+border-collapse:collapse;
+border:none;
+table-layout:fixed;
+width:180px;
+font-size:11px;
+position:absolute;
+left:515px;
+top:28px;
+}
+.prio_legend td {
+padding:0;
+padding-left:8px;
+}
+.prio_legend td.prio_color {
+width:20px;
+vertical-align:top;
+padding-left:0px;
+padding-top:2px;
+}
+.prio_color div {
+line-height:10px;
+}
+.prio_color div.prio_0 {
+background-color:#8ed3ff;
+}
+.prio_color div.prio_1 {
+background-color:#e4b835;
+}
+.prio_color div.prio_2 {
+background-color:#45cb55;
+}
+.prio_color div.prio_3 {
+background-color:#1aabdd;
+}
+.prio_color div.ds_color {
+background-color:#ffee58;
+}
+.prio_color div.mc_color {
+background-color:#9a7600;
+}
+.qos_back div.x_axis {
+position:absolute;
+left:61px;
+top:136px;
+}
+.x_axis div.x_scale {
+width:437px;
+height:5px;
+padding: 0;
+border: solid 0 #747674;
+font-size:1px;
+}
+.x_axis div.x_scale span {
+display:inline-block;
+border: solid 0 #747674;
+border-right-width:1px;
+text-align: right;
+padding-right:1px;
+height:100%;
+}
+.x_axis div.x_legend {
+height:20px;
+width:435px;
+font-size:11px;
+padding: 5px;
+text-align:right;
+}
+.qos_back div.y_legend {
+position:absolute;
+left:12px;
+top:8px;
+font-size:11px;
+}
+.qos_back div.y_scale {
+position:absolute;
+left:0px;
+top:29px;
+width:61px;
+height:110px;
+}
+.y_scale div {
+position:absolute;
+right:0px;
+height:0px;
+}
+.y_scale span.number {
+right:7px;
+bottom:-8px;
+position:absolute;
+display:inline-block;
+font-size:11px;
+}
+.y_scale span.scale {
+position:absolute;
+right:0px;
+top:0px;
+bottom:-10px;
+display:inline-block;
+width:5px;
+height:0px;
+border:solid 0 #747674;
+border-top-width:1px;
+}
+.ReconnectBlock{
+text-align:right;
+margin-top:5px;
+}
+</style>
+<script type="text/javascript" src="/js/ajax.js"></script>
+<script type="text/javascript">
+var g_Timer;
+var g_refresh_interval_object = false;
+var g_refresh_time = 30000;
+var g_cfg = {
+"drawWidth": 437, 
+"ds": {
+  "func": [{
+      "name": "ds_current_bps", 
+      "color": "#ffee58"
+    }, {
+      "name": "mc_current_bps", 
+      "color": "#9a7600"
+    }]
+}, 
+"columnWidth": 1, 
+"num_samples": 20, 
+"num_sgs": 1, 
+"uiQosDown0": {
+  "idx": 0, 
+  "type": "ds", 
+  "maxValue": 1, 
+  "yStep": 4, 
+  "maxYScale": 0
+}, 
+"uiQosUp0": {
+  "idx": 0, 
+  "type": "us", 
+  "maxValue": 1, 
+  "yStep": 4, 
+  "maxYScale": 0
+}, 
+"us": {
+  "func": [{
+      "name": "prio_realtime_bps", 
+      "color": "#8ed3ff"
+    }, {
+      "name": "prio_high_bps", 
+      "color": "#e4b835"
+    }, {
+      "name": "prio_default_bps", 
+      "color": "#45cb55"
+    }, {
+      "name": "prio_low_bps", 
+      "color": "#1aabdd"
+    }]
+}, 
+"xStep": 1, 
+"maxDrawWidth": 450, 
+"sample_interval": 5000, 
+"drawHeight": 110
+};
+for (id in g_cfg) {
+if (id.indexOf("uiQos") === 0) {
+g_cfg[id].lastValue = [];
+}
+}
+var g_nqos = convertNqosValues([{
+  "prio_realtime_bps": "13,227,594,262,0,254,0,254,0,315,0,5406,0,37,0,1014,322,88,0,0", 
+  "max_us": "104079", 
+  "downstream": 9.5526e+07, 
+  "upstream": 2e+07, 
+  "prio_low_bps": "0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0", 
+  "dynamic": false, 
+  "_node": "sg0", 
+  "prio_default_bps": "35315,33984,30476,26476,32072,25625,33091,28637,12713,32230,38641,33461,25228,22528,18102,24819,36816,40866,28240,35790", 
+  "ds_current_bps": "1651,1644,2030,1036,1536,1126,1510,1318,563,1561,1318,52566,1139,1033,768,1259,1958,2150,768,1280", 
+  "name": "sync_dsl", 
+  "max_ds": "1495653", 
+  "mc_current_bps": "0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0", 
+  "prio_high_bps": "34,184,351,32,0,60,52,17,79,15,554,3124,50,15,17,348,216,48,17,0", 
+  "mode": "VDSL"
+}])
+function convertNqosValues(obj) {
+obj = obj || [];
+var len = Math.min(obj.length, g_cfg.num_sgs);
+for (var i = 0; i < len; i++) {
+obj[i].prio_realtime_bps = bpsToIntArray(obj[i].prio_realtime_bps || "");
+obj[i].prio_high_bps = bpsToIntArray(obj[i].prio_high_bps || "");
+obj[i].prio_default_bps = bpsToIntArray(obj[i].prio_default_bps || "");
+obj[i].prio_low_bps = bpsToIntArray(obj[i].prio_low_bps || "");
+obj[i].ds_current_bps = bpsToIntArray(obj[i].ds_current_bps || "");
+obj[i].mc_current_bps = bpsToIntArray(obj[i].mc_current_bps || "");
+if (obj[i].dynamic) {
+var nMax = parseInt(obj[i].max_us, 10);
+if (nMax) {
+obj[i].upstream = 8 * nMax;
+}
+nMax = parseInt(obj[i].max_ds, 10);
+if (nMax) {
+obj[i].downstream = 8 * nMax;
+}
+obj[i].upstream = Math.max(10000, Math.floor(11 * obj[i].upstream / 10));
+obj[i].downstream = Math.max(10000, Math.floor(11 * obj[i].downstream / 10));
+}
+}
+return obj;
+}
+function bpsToIntArray(bps) {
+bps = bps.split(",");
+for (var i = 0, len = bps.length; i < len; i++) {
+bps[i] = (parseInt(bps[i],10) || 0) * 8;
+}
+return bps;
+}
+function getDsValues(idx, obj) {
+var result = [];
+var len = g_cfg.ds.func.length;
+for (var i = 0; i < len; i++) {
+var qName = g_cfg.ds.func[i].name;
+result[i] = obj[qName][idx];
+}
+for (var i = len-1; i > 0; i--) {
+result[i-1] += result[i];
+}
+return result;
+}
+function getUsValues(idx, obj) {
+var result = [];
+var len = g_cfg.us.func.length;
+for (var i = 0; i < len; i++) {
+var qName = g_cfg.us.func[i].name;
+result[i] = obj[qName][idx];
+}
+for (var i = len-1; i > 0; i--) {
+result[i-1] += result[i];
+}
+return result;
+}
+function getFuncColor(divId, idx) {
+return g_cfg[g_cfg[divId].type].func[idx].color || "";
+}
+function getFuncValues(divId, idx) {
+var result = [];
+var idType = g_cfg[divId].type;
+var idIdx = g_cfg[divId].idx;
+if (idType == 'us') {
+result = getUsValues(idx, g_nqos[idIdx]);
+}
+else if (idType == 'ds') {
+result = getDsValues(idx, g_nqos[idIdx]);
+}
+return result;
+}
+function makeAllValues(divId) {
+var result = [];
+var len = g_cfg.num_samples;
+for (var i = 0; i < len; i++) {
+result[i] = getFuncValues(divId, i);
+}
+return result;
+}
+function scaleValue(divId, v) {
+var maxStream = 0;
+var idType = g_cfg[divId].type;
+var idIdx = g_cfg[divId].idx;
+if (idType == "us") {
+maxStream = g_nqos[idIdx].upstream;
+}
+else if (idType == "ds") {
+maxStream = g_nqos[idIdx].downstream;
+}
+v = Math.min(v, maxStream);
+var result = g_cfg.drawHeight*v/g_cfg[divId].maxValue;
+return Math.floor(result);
+}
+function scaleValues(divId, val) {
+var result = [];
+for (var i = 0; i < val.length; i++ ) {
+result[i] = scaleValue(divId, val[i]);
+}
+return result;
+}
+function setLastValues(divId, val) {
+for (var i = 0; i < val.length; i++ ) {
+g_cfg[divId].lastValue[i] = val[i];
+}
+}
+function stopTimer() {
+if (g_Timer) {
+window.clearTimeout(g_Timer);
+g_Timer = null;
+}
+}
+function updateNqosValues() {
+var my_url = "/internet/inetstat_monitor.lua?sid=fdadddd118d04a12&useajax=1&action=get_graphic";
+var jsonParse = makeJSONParser();
+stopTimer();
+sendUpdateRequest();
+function sendUpdateRequest() {
+ajaxGet(my_url, cbUpdateValues);
+}
+function cbUpdateValues(xhr) {
+var txt = xhr.responseText || "null";
+if (xhr.status != 200) {
+txt = "null";
+}
+var newNqos = jsonParse(txt);
+if (!newNqos) {
+return;
+}
+newNqos = convertNqosValues(newNqos);
+for (var i = 0; i < g_cfg.num_sgs; i++) {
+var newValueUp = getUsValues(0, newNqos[i]);
+var newValueDown = getDsValues(0, newNqos[i]);
+if (g_nqos[i].upstream != newNqos[i].upstream || g_nqos[i].downstream != newNqos[i].downstream) {
+setLastValues('uiQosUp' + i, newValueUp);
+setLastValues('uiQosDown' + i, newValueDown);
+g_nqos[i] = newNqos[i];
+showAllValues(i);
+}
+else {
+var idUp = "uiQosUp" + i;
+var idDown = "uiQosDown" + i;
+if (g_cfg[idUp].lastValue.length > 0) {
+showValues(idUp, g_cfg[idUp].lastValue, newValueUp);
+}
+if (g_cfg[idDown].lastValue.length > 0) {
+showValues(idDown, g_cfg[idDown].lastValue, newValueDown);
+}
+setLastValues(idUp, newValueUp);
+setLastValues(idDown, newValueDown);
+g_nqos[i] = newNqos[i];
+}
+}
+g_Timer = window.setTimeout(sendUpdateRequest, g_cfg.sample_interval);
+}
+}
+function clearValues(divId) {
+var divQoS = jxl.get(divId);
+if (divQoS) {
+divQoS.innerHTML = "";
+}
+}
+function isColumn(el) {
+return jxl.hasClass(el, "column");
+}
+function dropFirstColumns(parentDiv) {
+var columns = jxl.walkDom(parentDiv, 'div', isColumn);
+if (columns && columns.length) {
+var cnt = columns.length - g_cfg.num_samples + 2;
+for (var i = 0; i < cnt; i++) {
+if (columns[i]) {
+parentDiv.removeChild(columns[i]);
+}
+}
+}
+}
+function showValues(divId, leftValue, rightValue) {
+leftValue = scaleValues(divId, leftValue);
+rightValue = scaleValues(divId, rightValue);
+var divQoS = jxl.get(divId);
+dropFirstColumns(divQoS);
+var columnDiv = document.createElement('div');
+columnDiv.className = "column";
+columnDiv.style.width = g_cfg.columnWidth + "px";
+var valDiv = [];
+for (var i = 0, len = leftValue.length; i < len; i++) {
+valDiv[i] = document.createElement('div');
+valDiv[i].className = "func";
+valDiv[i].style.height = "" + Math.min(rightValue[i], leftValue[i]) + "px";
+valDiv[i].style.borderTopWidth = "" + Math.abs(rightValue[i] - leftValue[i]) + "px";
+var side = leftValue[i] < rightValue[i] ? "Right" : "Left";
+valDiv[i].style["border"+side+"Width"] = g_cfg.columnWidth + "px";
+valDiv[i].style["border"+side+"Color"] = getFuncColor(divId, i);
+columnDiv.appendChild(valDiv[i]);
+}
+divQoS.appendChild(columnDiv);
+}
+function allDivsStr(divId) {
+var funcStr;
+var idType = g_cfg[divId].type;
+if (idType == "us") {
+funcStr = upstreamFuncStr;
+}
+else if (idType == "ds") {
+funcStr = downstreamFuncStr;
+}
+var val = makeAllValues(divId);
+var str = [];
+for (var i = g_cfg.num_samples-1; i > 0; i--) {
+str.push(funcStr(divId, val[i], val[i-1]));
+}
+return str.join("");;
+}
+function upstreamFuncStr(divId, leftValue, rightValue) {
+var str = [];
+leftValue = scaleValues(divId, leftValue);
+rightValue = scaleValues(divId, rightValue);
+str.push("<div class=\"column\"");
+str.push(" style=\"width:" + g_cfg.columnWidth + "px;");
+str.push("\">");
+for (var i = 0, len = leftValue.length; i < len; i++) {
+str.push("<div class=\"func\" style=\"");
+str.push("height:" + Math.min(rightValue[i], leftValue[i]) + "px;");
+str.push("border-top-width:" + Math.abs(rightValue[i] - leftValue[i]) + "px;");
+var side = leftValue[i] < rightValue[i] ? "right" : "left";
+str.push("border-" + side + "-width:" + g_cfg.columnWidth + "px;");
+str.push("border-" + side + "-color:" + getFuncColor(divId, i) + ";");
+str.push("\"></div>");
+}
+str.push("</div>");
+return str.join("");
+}
+function downstreamFuncStr(divId, leftValue, rightValue) {
+var str = [];
+leftValue = scaleValues(divId, leftValue);
+rightValue = scaleValues(divId, rightValue);
+str.push("<div class=\"column\"");
+str.push(" style=\"width:" + g_cfg.columnWidth + "px;");
+str.push("\">");
+for (var i = 0, len = leftValue.length; i < len; i++) {
+str.push("<div class=\"func\" style=\"");
+str.push("height:" + Math.min(rightValue[i], leftValue[i]) + "px;");
+str.push("border-top-width:" + Math.abs(rightValue[i] - leftValue[i]) + "px;");
+var side = leftValue[i] < rightValue[i] ? "right" : "left";
+str.push("border-" + side + "-width:" + g_cfg.columnWidth + "px;");
+str.push("border-" + side + "-color:" + getFuncColor(divId, i) + ";");
+str.push("\"></div>");
+}
+str.push("</div>");
+return str.join("");
+}
+function calcMaxValue(divId) {
+var idType = g_cfg[divId].type;
+var idIdx = g_cfg[divId].idx;
+if (idType == "us") {
+g_cfg[divId].maxValue = Math.max(1, g_nqos[idIdx].upstream);
+}
+else if (idType == "ds") {
+g_cfg[divId].maxValue = Math.max(1, g_nqos[idIdx].downstream);
+}
+if (g_cfg[divId].maxValue == 1) {
+g_cfg[divId].maxYScale = 0;
+}
+var d = 100000;
+while (g_cfg[divId].maxValue < d) {
+d /= 10;
+}
+g_cfg[divId].maxYScale = Math.floor(g_cfg[divId].maxValue/d)*d;
+while (scaleValue(divId, g_cfg[divId].maxValue) - scaleValue(divId, g_cfg[divId].maxYScale) < 15) {
+g_cfg[divId].maxYScale -= d;
+}
+}
+function calcDrawValues() {
+var w = g_cfg.maxDrawWidth;
+var n = g_cfg.num_samples-1;
+var c = Math.floor(Math.max(1, w/n));
+while (c > 1 && n * c < w) {
+w--;
+c = Math.floor(Math.max(1, w/n));
+}
+g_cfg.drawWidth = w;
+g_cfg.columnWidth = c;
+}
+function numToStr3(num) {
+var prefix = "";
+if (num < 100) {
+prefix += "0";
+}
+if (num < 10) {
+prefix += "0";
+}
+return prefix + num;
+}
+function dottedStr(num) {
+var result = [];
+var z = parseInt(num,10);
+while (z > 999) {
+result.push(numToStr3(z % 1000));
+z = Math.floor(z/1000);
+}
+result.push(z);
+return result.reverse().join(".");
+}
+function yScaleStr(divId) {
+var v = [];
+if (g_cfg[divId].maxValue <= 1) {
+v[0] = 0;
+}
+else {
+for (var i = g_cfg[divId].yStep; i >= 0; i--) {
+v[i] = i*g_cfg[divId].maxYScale/g_cfg[divId].yStep;
+}
+}
+var str = [];
+if (g_cfg[divId].maxValue > 1) {
+str.push('<div style=\"bottom:' + (g_cfg.drawHeight+1) + 'px;\">');
+str.push('<span class=\"number\">' + dottedStr(g_cfg[divId].maxValue/1000) + '</span>');
+str.push('<span class=\"scale\"></span>');
+str.push('</div>');
+}
+for (var i = 0; i < v.length; i++) {
+var b = Math.floor(g_cfg.drawHeight*v[i]/g_cfg[divId].maxValue);
+str.push('<div style=\"bottom:' + b + 'px;\">');
+str.push('<span class=\"number\">' + dottedStr(v[i]/1000) + '</span>');
+str.push('<span class=\"scale\"></span>');
+str.push('</div>');
+}
+return str.join("");
+}
+function showYScale(divId) {
+var divYScale = jxl.get(divId + "YScale");
+var div = [];
+var v = [];
+if (g_cfg[divId].maxValue <= 1) {
+v[0] = 0;
+}
+else {
+for (var i = g_cfg[divId].yStep; i >= 0; i--) {
+v[i] = i*g_cfg[divId].maxYScale/g_cfg[divId].yStep;
+}
+}
+var inc = 0;
+if (g_cfg[divId].maxValue > 1) {
+div[0] = document.createElement('div');
+var b = Math.floor(g_cfg.drawHeight);
+div[0].style.bottom = b + "px";
+var span = document.createElement('span');
+span.className = "number";
+span.innerHTML = dottedStr(g_cfg[divId].maxValue/1000);
+div[0].appendChild(span);
+span = document.createElement('span');
+span.className = "scale";
+div[0].appendChild(span);
+inc = 1;
+}
+for (var i = 0; i < v.length; i++) {
+div[i+inc] = document.createElement('div');
+var b = Math.floor(g_cfg.drawHeight*v[i]/g_cfg[divId].maxValue);
+div[i+inc].style.bottom = b + "px";
+var span = document.createElement('span');
+span.className = "number";
+span.innerHTML = dottedStr(v[i]/1000);
+div[i+inc].appendChild(span);
+span = document.createElement('span');
+span.className = "scale";
+div[i+inc].appendChild(span);
+}
+divYScale.innerHTML = "";
+var fragment = document.createDocumentFragment();
+for (var i = 0; i < div.length; i++) {
+fragment.appendChild(div[i]);
+}
+divYScale.appendChild(fragment);
+}
+function showAllValues(idPostfix) {
+calcDrawValues();
+calcMaxValue("uiQosDown" + idPostfix);
+calcMaxValue("uiQosUp" + idPostfix);
+var div = jxl.get("uiQosDown" + idPostfix);
+div.innerHTML = allDivsStr("uiQosDown" + idPostfix);
+jxl.setStyle(div, "width", g_cfg.drawWidth + "px");
+div = jxl.get("uiQosDown" + idPostfix + "YScale");
+div.innerHTML = yScaleStr('uiQosDown' + idPostfix);
+div = jxl.get("uiQosUp" + idPostfix);
+div.innerHTML = allDivsStr("uiQosUp" + idPostfix);
+jxl.setStyle(div, "width", g_cfg.drawWidth + "px");
+div = jxl.get("uiQosUp" + idPostfix + "YScale");
+div.innerHTML = yScaleStr('uiQosUp' + idPostfix);
+}
+function change_time_interval_ajax(refresh_time)
+{
+if(g_refresh_interval_object) window.clearInterval(g_refresh_interval_object);
+g_refresh_interval_object = window.setInterval(RefreshPageContent, refresh_time);
+}
+function RefreshPageContent(part)
+{
+var my_url = "/internet/inetstat_monitor.lua?sid=fdadddd118d04a12&useajax=1&action=get_table";
+sendUpdateRequest();
+function sendUpdateRequest() {
+ajaxGet(my_url, cbUpdateTable);
+}
+function cbUpdateTable(xhr) {
+var txt = xhr.responseText || "null";
+if (xhr.status != 200) {
+return;
+}
+jxl.setHtml("uiInternetMonitor",txt)
+zebra();
+var obj=document.getElementById("uiConnectState")
+if (obj && obj.value=="5") {
+jxl.enable("uiReconnectBtn");
+}
+}
+}
+function uiDoRefresh() {
+if (g_refresh_interval_object) {
+window.clearInterval(g_refresh_interval_object);
+}
+if (g_Timer) {
+window.clearTimeout(g_Timer);
+}
+location.href=""
+}
+function connect_again()
+{
+var my_url = "/internet/inetstat_monitor.lua?sid=fdadddd118d04a12&useajax=1&action=connect";
+sendUpdateRequest();
+function sendUpdateRequest()
+{
+ajaxGet(my_url, cbConnected);
+}
+function cbConnected()
+{
+jxl.enable("uiReconnectBtn");
+jxl.hide("uiWarnDisconnecting");
+RefreshPageContent();
+change_time_interval_ajax(g_refresh_time);
+}
+}
+function DoDisconnectInternet()
+{
+var my_url = "/internet/inetstat_monitor.lua?sid=fdadddd118d04a12&useajax=1&action=disconnect";
+sendUpdateRequest();
+function sendUpdateRequest()
+{
+change_time_interval_ajax(2000);
+jxl.disable("uiReconnectBtn");
+jxl.show("uiWarnDisconnecting");
+ajaxGet(my_url, cbDisconnected);
+}
+function cbDisconnected()
+{
+window.setTimeout("connect_again()",6000);
+window.setTimeout(function(){change_time_interval_ajax(g_refresh_time);},60000);
+}
+return false;
+}
+function init()
+{
+for (var i = 0; i < g_cfg.num_sgs; i++) {
+showAllValues(i);
+}
+updateNqosValues();
+if(g_refresh_interval_object) window.clearInterval(g_refresh_interval_object);
+RefreshPageContent();
+g_refresh_interval_object = window.setInterval(RefreshPageContent, g_refresh_time);
+window.setTimeout(uiDoRefresh, 60*60*1000);
+}
+ready.onReady(init);
+</script>
+</head>
+<body>
+<!-- pagename:/internet/inetstat_monitor.lua-->
+<div id="main_page_all">
+<div id="intro_bar_box">
+<div id="intro_bar">
+<div id="intro_bar_left" class="oemlogo_1und1">
+<img src="/css/default/images/leer.gif" usemap="#logo">
+<map name="logo">
+<area shape="rect" coords="0,0,250,77" href="/home/home.lua?sid=fdadddd118d04a12">
+</map>
+</div>
+<div id="intro_boxinfo">
+<p></p>
+</div>
+<div id="intro_bar_middle"></div>
+</div>
+</div>
+<div class="clear_float"></div>
+
+<!-- de-first -begin -->
+<div id="sub_menu_head" >
+<div class="sm_iefix">
+<span id="sso_dropdown" class="hidelist">Angemeldet
+</span>
+<div id="sso_dropdown_list" style="display:none;">
+<p>
+<a href="/sso_editmyself.lua?sid=fdadddd118d04a12&amp;own_password=&amp;back_to_page=/home/home.lua" id="ssoChangePasswordLink">Kennwort ändern
+</a>
+</p>
+<p>
+<a onclick="" href="/home/home.lua?sid=fdadddd118d04a12&amp;logout=1" id="ssoLogoutLink">Abmelden
+</a>
+</p>
+</div> | <a class="sm_link_selected sm_link_bold" href="/home/home.lua?sid=fdadddd118d04a12"><span>FRITZ!Box</span></a> | <a class="sm_link_bold" href="/nas?sid=fdadddd118d04a12">FRITZ!NAS</a> | <a class="sm_link_bold" href="/myfritz?sid=fdadddd118d04a12">MyFRITZ!</a> | <a target="_blank" href="/help/help.lua?sid=fdadddd118d04a12&helppage=hilfe_online_monitor.html" onclick="help.popup('/help/help.lua?sid=fdadddd118d04a12&helppage=hilfe_online_monitor.html&hide=yes'); return false;" title="Hilfe" class="nocancel iconHelp"><img alt="" src="/css/default/images/icon_hilfe.png"></a></div>
+</div>
+
+<div id="menu_content_box">
+
+<div id="menuBox">
+<div id="menucontent" class="menu_body_outer">
+<ul>
+<li><a href="/home/home.lua?sid=fdadddd118d04a12">Übersicht</a></li>
+<li class=" selected submenu"><a href="/internet/inetstat_monitor.lua?sid=fdadddd118d04a12">Internet</a>
+<ul>
+<li class=" selected"><a href="/internet/inetstat_monitor.lua?sid=fdadddd118d04a12">Online-Monitor</a></li>
+<li><a href="/internet/internet_settings.lua?sid=fdadddd118d04a12">Zugangsdaten</a></li>
+<li><a href="/internet/kids_userlist.lua?sid=fdadddd118d04a12">Filter</a></li>
+<li><a href="/internet/port_fw.lua?sid=fdadddd118d04a12">Freigaben</a></li>
+<li><a href="/internet/myfritz.lua?sid=fdadddd118d04a12">MyFRITZ!</a></li>
+<li><a href="/internet/dsl_overview.lua?sid=fdadddd118d04a12">DSL-Informationen</a></li>
+</ul></li>
+<li><a href="/fon_num/foncalls_list.lua?sid=fdadddd118d04a12">Telefonie</a></li>
+<li><a href="/net/network_user_devices.lua?sid=fdadddd118d04a12">Heimnetz</a></li>
+<li><a href="/wlan/wlan_settings.lua?sid=fdadddd118d04a12">WLAN</a></li>
+<li><a href="/dect/dect_settings.lua?sid=fdadddd118d04a12">DECT</a></li>
+<li><a href="/system/diagnosis.lua?sid=fdadddd118d04a12">Diagnose</a></li>
+<li><a href="/system/syslog.lua?sid=fdadddd118d04a12">System</a></li>
+</ul></div>
+</div>
+
+<div id="page_content_menu_box">
+<div id="contentTitle" class="blue_bar_back">
+<h2 id="uiPageTitle">Online-Monitor</h2>
+</div>
+<div id="page_content" class="page_content">
+<div id="page_needs_js_box" style="display:none;"><ul class="tabs">
+<li class="active"><a href="/internet/inetstat_monitor.lua?sid=fdadddd118d04a12&">Online-Monitor</a></li>
+<li><a href="/internet/inetstat_counter.lua?sid=fdadddd118d04a12&">Online-Zähler</a></li>
+</ul><div class='clear_float'></div>
+
+<div id="uiValidationWait" style="display:none;">
+<div class="wait">
+<p>
+Bitte warten Sie, Ihre Eingaben werden geprüft.
+</p>
+<p class="waitimg">
+<img src="/css/default/images/wait.gif">
+</p>
+</div>
+<div class="btn_form_foot">
+</div>
+</div>
+<div id="uiValidationDone" style="display:none;">
+<div class="wait">
+<p>
+Die Prüfung der Eingaben war erfolgreich.
+</p>
+<p class="waitimg">
+<img src="/css/default/images/finished_ok_green.gif">
+</p>
+</div>
+<div class="btn_form_foot">
+<button type="button" id="uiValidationDoneOk">
+OK
+</button>
+</div>
+</div>
+
+<form method="POST" action="/internet/inetstat_monitor.lua?sid=fdadddd118d04a12" name="main_form">
+<div id="uiMonitor" style="">
+<p>Der Online-Monitor stellt Informationen zu Ihrer Internetverbindung und zu aktivierten Zusatzfunktionen zur Verfügung.</p>
+<div id="uiInternetMonitor">
+<table id="tInternetMonitor" class="zebra">
+<colgroup>
+<col width="140px">
+<col width="25px">
+<col width="auto">
+</colgroup>
+<tr id="uiTrDsl"><td ><a href="/internet/dsl_overview.lua?sid=fdadddd118d04a12">DSL</a></td><td><div class="led_green">&nbsp;</div></td><td >verbunden, 95,5 Mbit/s<img src='/css/default/images/dsl_downstream.gif' height='12px'>&nbsp;25,1 Mbit/s<img src='/css/default/images/dsl_upstream.gif' height='12px'></td></tr><tr id='uiTrInternet'><td><div id='ipv4_title'>Internet, IPv4</div></td><td id='ipv4_led'><div class='led_green'>&nbsp;</div></td><td><div id='ipv4_info'><span class="limited">verbunden seit 31.01.2016, 09:33 Uhr</span>, <span class="limited" style="max-width:240px;">1&amp;1 Internet</span>, reale Bandbreite: 95,5 Mbit/s<img src='/css/default/images/dsl_downstream.gif' height='12px'>&nbsp;20,0 Mbit/s<img src='/css/default/images/dsl_upstream.gif' height='12px'><span class="limited">,<br>IP-Adresse: 93.237.67.27</span></div></td></tr><tr>
+<td class="tdName">Genutzte DNS-Server</td>
+<td><div class="">&nbsp;</div></td>
+<td class="tdinfo">217.237.150.188 (aktuell genutzt für Standardanfragen)<br>217.237.151.142 <br></td>
+</tr>
+<tr>
+<td class="tdName"><a href="/internet/dyn_dns.lua?sid=fdadddd118d04a12">Dynamic DNS</a></td>
+<td><div class="">&nbsp;</div></td>
+<td class="tdinfo">aktiviert, jecl.homenet.org, IPv4-Status: erfolgreich angemeldet</td>
+</tr>
+<tr>
+<td class="tdName"><a href="/internet/port_fw.lua?sid=fdadddd118d04a12">Portfreigabe</a></td>
+<td><div class="">&nbsp;</div></td>
+<td class="tdinfo">aktiviert, 20 Portfreigaben eingerichtet</td>
+</tr>
+
+</table>
+</div> <!-- uiInternetMontior -->
+<!-- früher IC_Btn -->
+<div id="uiReconnection_Btn" style="">
+<hr>
+<div>
+Durch einen Klick auf die Schaltfläche "Neu verbinden" wird die Internetverbindung kurzzeitig getrennt und anschließend automatisch wiederhergestellt. Die FRITZ!Box erhält dabei von Ihrem Internetanbieter in der Regel eine neue IP-Adresse.</div>
+<div class="ReconnectBlock" >
+<span id="uiWarnDisconnecting" style="display:none">
+Bitte haben Sie einen Moment Geduld. Der Vorgang kann bis zu 30 Sekunden dauern.
+</span>
+<input type="button" id="uiReconnectBtn" onclick="return DoDisconnectInternet();" value="Neu verbinden" >
+</div>
+</div><!-- uiReconnection_Btn -->
+<div id="uiDownUpDiag" style="">
+<hr>
+<h4>Aktuelle Auslastung der Internetverbindung</h4>
+<div>
+Die folgenden Darstellungen zeigen die aktuelle Auslastung Ihrer Internetverbindung. "Downstream" zeigt die Datenmengen, die aus dem Internet in Ihr Heimnetz geladen werden. "Upstream" zeigt den Datenfluss von Ihrem Heimnetz zum Internet.
+</div>
+
+<div class="qos_back">
+<h4 class="qos_title">Downstream
+</h4>
+<div id="uiQosDown0" class="qos">
+</div>
+<table class="prio_legend">
+<tr>
+<td class="prio_color">
+<div class="ds_color">&nbsp;
+</div>
+</td>
+<td>Internet
+</td>
+</tr>
+<tr>
+<td class="prio_color">
+<div class="mc_color">&nbsp;
+</div>
+</td>
+<td>IPTV
+</td>
+</tr>
+</table>
+<div class="downstream_logo">
+</div>
+<div class="x_axis">
+<div class="x_legend">Zeit
+</div>
+</div>
+<div class="y_legend">Geschwindigkeit in kbit/s
+</div>
+<div id="uiQosDown0YScale" class="y_scale">
+</div>
+</div>
+<br>
+<div class="qos_back">
+<h4 class="qos_title">Upstream
+</h4>
+<div id="uiQosUp0" class="qos">
+</div>
+<table class="prio_legend">
+<tr>
+<td class="prio_color">
+<div class="prio_0">&nbsp;
+</div>
+</td>
+<td>Echtzeitanwendungen
+</td>
+</tr>
+<tr>
+<td class="prio_color">
+<div class="prio_1">&nbsp;
+</div>
+</td>
+<td>Priorisierte Anwendungen
+</td>
+</tr>
+<tr>
+<td class="prio_color">
+<div class="prio_2">&nbsp;
+</div>
+</td>
+<td>Normale Anwendungen
+</td>
+</tr>
+<tr>
+<td class="prio_color">
+<div class="prio_3">&nbsp;
+</div>
+</td>
+<td>Hintergrundanwendungen
+</td>
+</tr>
+</table>
+<div class="upstream_logo">
+</div>
+<div class="x_axis">
+<div class="x_legend">Zeit
+</div>
+</div>
+<div class="y_legend">Geschwindigkeit in kbit/s
+</div>
+<div id="uiQosUp0YScale" class="y_scale">
+</div>
+</div>
+<br>
+</div><!-- uiDownUpDiag -->
+</div><!-- uiMontior -->
+<div id="btn_form_foot">
+<input type="hidden" name="sid" value="fdadddd118d04a12">
+<button type="submit" name="btn_refresh">Aktualisieren</button>
+</div>
+</form>
+<!-- de-first -begin -->
+</div>
+<p id="page_needs_js_txt" >
+Die Funktionen dieser Seite benötigen Javascript. Bitte aktivieren Sie Javascript in Ihrem Browser und laden Sie die Seite erneut.
+</p>
+<span id="uiLuatime"></span>
+</div>
+<div class="clear_float"></div>
+</div>
+</div>
+
+<!-- de-first -begin -->
+<div id="foot_menu_box">
+<a href="/system/expert.lua?sid=fdadddd118d04a12&amp;backtopage=%2Finternet%2Finetstat_monitor.lua" title="Sie befinden sich in der Erweiterten Ansicht. Beim Wechsel in die Standardansicht werden einige Bereiche der FRITZ!Box-Oberfläche ausgeblendet und es werden nur noch die Einstellungen angezeigt, die für den alltäglichen Betrieb der FRITZ!Box erforderlich sind.">Ansicht: Erweitert</a> | <a href="/menus/sitemap.lua?sid=fdadddd118d04a12" title="Inhalt" >Inhalt</a> | <a class="nocancel" href='http://www.avm.de/fritzbox_manual.php?hardware=203&oem=1und1&language=de&country=&version=131.06.30&subversion=' target='_blank'>Handbuch</a> | <a class="nocancel" href='http://www.avm.de/fritzbox-service-portal.php?hardware=203&oem=1und1&language=de&country=&version=131.06.30&subversion=' target='_blank'>Tipps&amp;Tricks</a> | <a class="nocancel" href='http://www.avm.de/newsletter?hardware=203&oem=1und1&language=de&country=&version=131.06.30&subversion=' target='_blank'>Newsletter</a> | <a class="nocancel" href='http://www.avm.de' target='_blank' style='margin-right:0px;'>avm.de</a> 
+</div>
+
+</div>
+
+<script type="text/javascript">
+jxl.hide("page_needs_js_txt");
+jxl.show("page_needs_js_box");
+</script>
+
+
+
+<div id="logqueries" style="clear:both; display:none;">
+<pre>
+script = /internet/inetstat_monitor.lua
+GET = {
+  ["action"] = "get_graphic", 
+  ["action_i"] = 1
+}
+POST = {
+}
+QUERIES = {
+  ["box:settings/ata_mode"] = "0", 
+  ["box:settings/expertmode/activated"] = "1", 
+  ["box:settings/hostname"] = "", 
+  ["box:settings/opmode"] = "opmode_pppoe", 
+  ["box:settings/upnp/activated"] = "1", 
+  ["box:settings/upnp/control_activated"] = "0", 
+  ["box:settings/usbtethering_mode"] = "0", 
+  ["box:status/hint_dsl_no_cable"] = "0", 
+  ["box:status/localtime"] = "11:07:26 31.01.2016", 
+  ["boxusers:settings/compatibility_mode"] = "1", 
+  ["boxusers:settings/last_homenetwork_username"] = "", 
+  ["boxusers:settings/own_email"] = "nil", 
+  ["boxusers:settings/own_password"] = "****", 
+  ["boxusers:settings/skip_auth_from_homenetwork"] = "0", 
+  ["connection0:settings/Budget/Enabled"] = "0", 
+  ["connection0:settings/enabled"] = "1", 
+  ["connection0:settings/shapedrate_ds"] = "95526", 
+  ["connection0:settings/shapedrate_in_gui"] = "1", 
+  ["connection0:settings/shapedrate_us"] = "20000", 
+  ["connection0:settings/type"] = "pppoe", 
+  ["connection0:status/connect"] = "5", 
+  ["connection0:status/conntime_date"] = "31.01.2016", 
+  ["connection0:status/conntime_time"] = "09:33", 
+  ["connection0:status/ip"] = "93.237.67.27", 
+  ["ctlusb:settings/storage-ftp-internet"] = "0", 
+  ["ctlusb:settings/tethering_device"] = "nil", 
+  ["ddns:settings/account0/activated"] = "1", 
+  ["ddns:settings/account0/domain"] = "jecl.homenet.org", 
+  ["ddns:settings/account0/state"] = "5", 
+  ["dect:settings/enabled"] = "0", 
+  ["dslstatglobal:status/in"] = "95526000", 
+  ["dslstatglobal:status/out"] = "20000000", 
+  ["eth0:status/carrier"] = "1", 
+  ["forwardrules:settings/use_exposed_host"] = "0", 
+  ["gsm:settings/ModemPresent"] = "0", 
+  ["gsm:settings/PinEmpty"] = "1", 
+  ["interfaces:settings/lan0/dhcpclient"] = "0", 
+  ["ipv6:settings/enabled"] = "0", 
+  ["ipv6:settings/ipv6_fw_hidden"] = "1", 
+  ["jasonii:settings/enabled"] = "1", 
+  ["jasonii:settings/user_email"] = "", 
+  ["nqos:settings/stat/num_samples"] = "20", 
+  ["nqos:settings/stat/num_sgs"] = "1", 
+  ["nqos:settings/stat/sample_interval"] = "5", 
+  ["providerlist:settings/activeprovider"] = "1und1", 
+  ["remoteman:settings/enabled"] = "0", 
+  ["rights:status/BoxAdmin"] = "2", 
+  ["rights:status/boxuser_UID"] = "boxuser100", 
+  ["rights:status/userid"] = "100", 
+  ["rights:status/username"] = "@CompatMode", 
+  ["sar:settings/encapsulation"] = "dslencap_pppoe", 
+  ["security:settings/password"] = "****", 
+  ["umts:settings/enabled"] = "0", 
+  ["umts:settings/name"] = "T-Mobile", 
+  ["wlan:settings/WDS_enabled"] = "0", 
+  ["wlan:settings/WDS_hop"] = "0", 
+  ["wlan:settings/ap_enabled"] = "1", 
+  ["wlan:settings/ap_enabled_scnd"] = "nil"
+}
+MQUERIES = {
+  ["dnsserver:status/dnsserver/list(state,addr,domains)"] = {
+    [1] = {
+      ["_node"] = "dnsserver0", 
+      ["addr"] = "217.237.150.188", 
+      ["domains"] = "", 
+      ["state"] = "best"
+    }, 
+    [2] = {
+      ["_node"] = "dnsserver1", 
+      ["addr"] = "217.237.151.142", 
+      ["domains"] = "", 
+      ["state"] = "enabled"
+    }
+  }, 
+  ["forwardrules:settings/rule/list(activated)"] = {
+    [1] = {
+      ["_node"] = "rule0", 
+      ["activated"] = "1"
+    }, 
+    [2] = {
+      ["_node"] = "rule1", 
+      ["activated"] = "1"
+    }, 
+    [3] = {
+      ["_node"] = "rule2", 
+      ["activated"] = "1"
+    }, 
+    [4] = {
+      ["_node"] = "rule3", 
+      ["activated"] = "0"
+    }, 
+    [5] = {
+      ["_node"] = "rule4", 
+      ["activated"] = "1"
+    }, 
+    [6] = {
+      ["_node"] = "rule5", 
+      ["activated"] = "1"
+    }, 
+    [7] = {
+      ["_node"] = "rule6", 
+      ["activated"] = "1"
+    }, 
+    [8] = {
+      ["_node"] = "rule7", 
+      ["activated"] = "1"
+    }, 
+    [9] = {
+      ["_node"] = "rule8", 
+      ["activated"] = "1"
+    }, 
+    [10] = {
+      ["_node"] = "rule9", 
+      ["activated"] = "1"
+    }, 
+    [11] = {
+      ["_node"] = "rule10", 
+      ["activated"] = "1"
+    }, 
+    [12] = {
+      ["_node"] = "rule11", 
+      ["activated"] = "0"
+    }, 
+    [13] = {
+      ["_node"] = "rule12", 
+      ["activated"] = "1"
+    }, 
+    [14] = {
+      ["_node"] = "rule13", 
+      ["activated"] = "1"
+    }, 
+    [15] = {
+      ["_node"] = "rule14", 
+      ["activated"] = "1"
+    }, 
+    [16] = {
+      ["_node"] = "rule15", 
+      ["activated"] = "1"
+    }, 
+    [17] = {
+      ["_node"] = "rule16", 
+      ["activated"] = "1"
+    }, 
+    [18] = {
+      ["_node"] = "rule17", 
+      ["activated"] = "1"
+    }, 
+    [19] = {
+      ["_node"] = "rule18", 
+      ["activated"] = "1"
+    }, 
+    [20] = {
+      ["_node"] = "rule19", 
+      ["activated"] = "1"
+    }, 
+    [21] = {
+      ["_node"] = "rule20", 
+      ["activated"] = "1"
+    }, 
+    [22] = {
+      ["_node"] = "rule21", 
+      ["activated"] = "1"
+    }
+  }, 
+  ["nqos:settings/sg/list(name,mode,max_ds,max_us,ds_current_bps,mc_current_bps,prio_realtime_bps,prio_high_bps,prio_default_bps,prio_low_bps)"] = {
+    [1] = {
+      ["_node"] = "sg0", 
+      ["ds_current_bps"] = "1651,1644,2030,1036,1536,1126,1510,1318,563,1561,1318,52566,1139,1033,768,1259,1958,2150,768,1280", 
+      ["max_ds"] = "1495653", 
+      ["max_us"] = "104079", 
+      ["mc_current_bps"] = "0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0", 
+      ["mode"] = "VDSL", 
+      ["name"] = "sync_dsl", 
+      ["prio_default_bps"] = "35315,33984,30476,26476,32072,25625,33091,28637,12713,32230,38641,33461,25228,22528,18102,24819,36816,40866,28240,35790", 
+      ["prio_high_bps"] = "34,184,351,32,0,60,52,17,79,15,554,3124,50,15,17,348,216,48,17,0", 
+      ["prio_low_bps"] = "0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0", 
+      ["prio_realtime_bps"] = "13,227,594,262,0,254,0,254,0,315,0,5406,0,37,0,1014,322,88,0,0"
+    }
+  }, 
+  ["providerlist:settings/providerlist/list(providername,Id)"] = {
+    [1] = {
+      ["Id"] = "tonline", 
+      ["_node"] = "providerlist0", 
+      ["providername"] = "Telekom"
+    }, 
+    [2] = {
+      ["Id"] = "1und1", 
+      ["_node"] = "providerlist1", 
+      ["providername"] = "1&amp;1 Internet"
+    }, 
+    [3] = {
+      ["Id"] = "vodafone2_vdsl", 
+      ["_node"] = "providerlist2", 
+      ["providername"] = "Vodafone Einrichtung mit Zugangsdaten"
+    }, 
+    [4] = {
+      ["Id"] = "alice", 
+      ["_node"] = "providerlist3", 
+      ["providername"] = "Alice (Hansenet)"
+    }, 
+    [5] = {
+      ["Id"] = "otwored", 
+      ["_node"] = "providerlist4", 
+      ["providername"] = "o2 DSL"
+    }, 
+    [6] = {
+      ["Id"] = "oma_lan", 
+      ["_node"] = "providerlist5", 
+      ["providername"] = ""
+    }, 
+    [7] = {
+      ["Id"] = "congstar_vdsl", 
+      ["_node"] = "providerlist6", 
+      ["providername"] = "congstar VDSL und Glasfaser"
+    }, 
+    [8] = {
+      ["Id"] = "easybell_vdsl", 
+      ["_node"] = "providerlist7", 
+      ["providername"] = "easybell"
+    }, 
+    [9] = {
+      ["Id"] = "encoline", 
+      ["_node"] = "providerlist8", 
+      ["providername"] = "Encoline"
+    }, 
+    [10] = {
+      ["Id"] = "ewetel_xdsl", 
+      ["_node"] = "providerlist9", 
+      ["providername"] = "DSL &amp; IP-Telefonie (ohne Splitter)"
+    }, 
+    [11] = {
+      ["Id"] = "ewetel", 
+      ["_node"] = "providerlist10", 
+      ["providername"] = "DSL &amp; klassische Telefonie (mit Splitter)"
+    }, 
+    [12] = {
+      ["Id"] = "gmx", 
+      ["_node"] = "providerlist11", 
+      ["providername"] = "GMX"
+    }, 
+    [13] = {
+      ["Id"] = "htpdsl_vdsl", 
+      ["_node"] = "providerlist12", 
+      ["providername"] = "htp DSL"
+    }, 
+    [14] = {
+      ["Id"] = "htpngn_vdsl", 
+      ["_node"] = "providerlist13", 
+      ["providername"] = "htp NGN"
+    }, 
+    [15] = {
+      ["Id"] = "kielnet_vdsl", 
+      ["_node"] = "providerlist14", 
+      ["providername"] = "KielNET DSL"
+    }, 
+    [16] = {
+      ["Id"] = "netcologne_netaachen_dsl1", 
+      ["_node"] = "providerlist15", 
+      ["providername"] = "NetCologne / NetAachen DSL-Anschluss mit Splitter"
+    }, 
+    [17] = {
+      ["Id"] = "netcologne_netaachen_dsl2", 
+      ["_node"] = "providerlist16", 
+      ["providername"] = "NetCologne / NetAachen DSL-Anschluss ohne Splitter"
+    }, 
+    [18] = {
+      ["Id"] = "netcologne_netaachen_vdsl1", 
+      ["_node"] = "providerlist17", 
+      ["providername"] = "NetCologne / NetAachen VDSL-Anschluss"
+    }, 
+    [19] = {
+      ["Id"] = "netcologne_netaachen_vdsl2", 
+      ["_node"] = "providerlist18", 
+      ["providername"] = "NetCologne / NetAachen VDSL-Bitstream-Anschluss"
+    }, 
+    [20] = {
+      ["Id"] = "o2", 
+      ["_node"] = "providerlist19", 
+      ["providername"] = "o2"
+    }, 
+    [21] = {
+      ["Id"] = "qsc", 
+      ["_node"] = "providerlist20", 
+      ["providername"] = "QSC SDSL"
+    }, 
+    [22] = {
+      ["Id"] = "qsc_dsl", 
+      ["_node"] = "providerlist21", 
+      ["providername"] = "QSC ADSL2+/VDSL"
+    }, 
+    [23] = {
+      ["Id"] = "telefonica", 
+      ["_node"] = "providerlist22", 
+      ["providername"] = "Be-Converged DSL"
+    }, 
+    [24] = {
+      ["Id"] = "telefonica_fttb", 
+      ["_node"] = "providerlist23", 
+      ["providername"] = "Be-Converged FTTB"
+    }, 
+    [25] = {
+      ["Id"] = "versatel", 
+      ["_node"] = "providerlist24", 
+      ["providername"] = "Versatel"
+    }, 
+    [26] = {
+      ["Id"] = "wobcom", 
+      ["_node"] = "providerlist25", 
+      ["providername"] = "WOBCOM xDSL"
+    }, 
+    [27] = {
+      ["Id"] = "other", 
+      ["_node"] = "providerlist26", 
+      ["providername"] = ""
+    }
+  }, 
+  ["vpn:settings/connection/list(activated,state,name)"] = {
+  }, 
+  ["wlan:settings/wlanlist/list(state,is_guest,mac)"] = {
+    [1] = {
+      ["_node"] = "wlanlist0", 
+      ["is_guest"] = "0", 
+      ["mac"] = "F4:8B:32:20:F9:0B", 
+      ["state"] = "5"
+    }, 
+    [2] = {
+      ["_node"] = "wlanlist1", 
+      ["is_guest"] = "0", 
+      ["mac"] = "00:07:AB:CD:AD:82", 
+      ["state"] = "0"
+    }, 
+    [3] = {
+      ["_node"] = "wlanlist2", 
+      ["is_guest"] = "0", 
+      ["mac"] = "20:54:76:D2:99:BB", 
+      ["state"] = "0"
+    }, 
+    [4] = {
+      ["_node"] = "wlanlist3", 
+      ["is_guest"] = "0", 
+      ["mac"] = "00:25:AE:81:08:60", 
+      ["state"] = "0"
+    }, 
+    [5] = {
+      ["_node"] = "wlanlist4", 
+      ["is_guest"] = "0", 
+      ["mac"] = "F4:09:D8:16:B7:36", 
+      ["state"] = "0"
+    }
+  }
+}
+CONFIG = {
+  ["AB_COUNT"] = 1, 
+  ["ATA"] = true, 
+  ["AURA"] = true, 
+  ["BETA_RELEASE"] = 0, 
+  ["BOX_FEEDBACK"] = true, 
+  ["CAPI_POTS"] = false, 
+  ["CAPI_TE"] = false, 
+  ["DECT"] = true, 
+  ["DECT_MONI"] = true, 
+  ["DECT_MONI_EX"] = true, 
+  ["DOCSIS"] = false, 
+  ["DSL"] = true, 
+  ["ECO"] = true, 
+  ["ECO_SYSSTAT"] = true, 
+  ["FAXSEND"] = true, 
+  ["FON"] = true, 
+  ["FONQUALITY"] = true, 
+  ["GUI_6360_WLAN_INCOMPLETE"] = false, 
+  ["GUI_AUTOUPDATETAB"] = true, 
+  ["GUI_HAS_11AC"] = false, 
+  ["GUI_IS_POWERLINE"] = false, 
+  ["GUI_IS_REPEATER"] = false, 
+  ["GUI_LAN_GUEST"] = true, 
+  ["GUI_NEW_FAX"] = true, 
+  ["GUI_REMOTE_TMP"] = false, 
+  ["GUI_SIP_READ_ONLY"] = true, 
+  ["IPV6"] = true, 
+  ["KIDS"] = true, 
+  ["LABOR_DSL"] = false, 
+  ["LTE"] = false, 
+  ["MAILER"] = false, 
+  ["MAILER2"] = true, 
+  ["MANUAL_URL"] = "http://www.avm.de/fritzbox_manual.php?hardware=203&amp;oem=1und1&amp;language=de&amp;country=&amp;version=131.06.30&amp;subversion=", 
+  ["MEDIASRV"] = true, 
+  ["MORPHSTICK"] = false, 
+  ["MTD_MAIL"] = true, 
+  ["MTD_RSS"] = true, 
+  ["MULTI_COUNTRY"] = false, 
+  ["MULTI_LANGUAGE"] = false, 
+  ["MYFRITZ"] = true, 
+  ["NAND"] = true, 
+  ["NAS"] = true, 
+  ["NEWSLETTER_URL"] = "http://www.avm.de/newsletter?hardware=203&amp;oem=1und1&amp;language=de&amp;country=&amp;version=131.06.30&amp;subversion=", 
+  ["NLR_AUDIO"] = false, 
+  ["NQOS"] = true, 
+  ["RAMDISK"] = false, 
+  ["RELEASE"] = 1, 
+  ["REMOTE_HTTPS"] = true, 
+  ["SERVICEPORTAL_URL"] = "http://www.avm.de/fritzbox-service-portal.php?hardware=203&amp;oem=1und1&amp;language=de&amp;country=&amp;version=131.06.30&amp;subversion=", 
+  ["SESSIONID"] = true, 
+  ["STOREUSRCFG"] = true, 
+  ["TAM_MODE"] = 1, 
+  ["TIMERCONTROL"] = true, 
+  ["TR069"] = true, 
+  ["USB_GSM"] = true, 
+  ["USB_HOST"] = true, 
+  ["USB_STORAGE"] = true, 
+  ["USB_STORAGE_SPINDOWN"] = true, 
+  ["USB_TETHERING"] = true, 
+  ["USB_XHCI"] = false, 
+  ["VPN"] = true, 
+  ["WEBCM_INTERPRETER"] = true, 
+  ["WLAN"] = {
+  }, 
+  ["WLAN_GUEST"] = true, 
+  ["WLAN_WDS"] = false, 
+  ["WLAN_WDS2"] = true, 
+  ["WLAN_WPS"] = true, 
+  ["country"] = "049", 
+  ["gu_type"] = "release", 
+  ["isDebug"] = false, 
+  ["is_6360"] = false, 
+  ["isp_mac_needed"] = false, 
+  ["language"] = "de", 
+  ["language_is_de"] = true, 
+  ["need_reboot"] = false, 
+  ["no_ir_pc_rss_samples"] = false, 
+  ["no_number_area"] = false, 
+  ["oem"] = "1und1", 
+  ["sip_packetsize"] = false, 
+  ["sip_provider_international"] = false, 
+  ["timezone"] = false, 
+  ["use_nat"] = false
+}
+</pre>
+</div>
+</body>
+</html>
+
+{
+"dslam": "Broadcom<br>164.97<br>B5004244434D<br>7631302E<br>00", 
+"line": [{
+    "mode": "VDSL2", 
+    "train_state": "DSL aktiv seit:", 
+    "time": "1 Stunde 34 Minuten", 
+    "pic": "\/css\/default\/images\/gruen_leitung.gif"
+  }], 
+"ds_rate": "95.526 kbit\/s", 
+"us_rate": "25.137 kbit\/s"
+}"

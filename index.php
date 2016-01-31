@@ -129,6 +129,12 @@ ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFT
   		}  		
 		}
  	  	  
+ 	  // If no start date found we start from the beginning
+ 	  if ($start_index == 0)
+ 	  {
+ 	  	$start_index = 1;
+ 	  }  
+ 	  
 	  // Read data
     for ($i = $start_index; $i < $end_index; $i++)
 		{		 
