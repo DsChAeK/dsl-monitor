@@ -28,6 +28,13 @@ Here you can see my DSL line before and after my troubles.
         ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 
 ## Changes
+
+v2.2, 16.06.2018
+* works with FRITZ!OS: 06.83
+* split data extraction in multiple strings
+* IP + DNS logging is not working currently
+* examples are not up to date...
+
 v2.1, 31.01.2016
 * fixed start_index if start_date wasn't found
 * added DSLAM info to data log
@@ -99,11 +106,16 @@ You should have some basic knowledge of linux and stuff!
 
      php /var/www/html/dsl_monitor/dsl.php
 
-6. Check if dsl_monitor.log was created in /log/
+6. Check if dsl_monitor.log was created in /log/ and has content
      
      cd /var/www/html/dsl_monitor/log/
      ls -la
-     
+	 sudo nano /var/www/html/dsl_monitor/log/
+	 
+	 content should look like this: 
+		DateTime,DSLAM Max DL,DSLAM Max UL,DSLAM Min DL,DLSAM Min UL,V-Stelle Kapa DL,V-Stelle Kapa UL,Box Kapa DL,Box Kapa UL,SNR-Marge DL,SNR-Marge UL,Daempfung DL,Daempfung UL,Box ES,Box SES,Box CRC/min,Box CRC/15min,V-Stelle ES,V-Stelle SES,V-Stelle CRC/min,V-Stelle CRC/15min,UL,DL,IP,DNS1,DNS2,DSLAM
+		1529154547000,109344,42000,720,0,112372,41933,109342,41933,15,9,9,8,0,0,0,0,0,0,0,0,39.669,2.461,0,0,0,Broadcom 177.161 1UND1.DEU.DTAG.AJ9P VDSL2 17a G.Vector (ITU G.993.5)
+	 
 7. Install a cronjob for dsl.php skript
    
      sudo crontab -e

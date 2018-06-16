@@ -19,7 +19,7 @@ ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFT
 
 	// Time offset in seconds
   $time_offset *= 60*60;
-    
+
   // Get data from FritzBox
   try
   {
@@ -28,32 +28,33 @@ ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFT
 
     $fritz = new fritzbox_api();
 
-    // http://fritz.box/internet/dsl_stats_tab.lua?update=mainDiv&sid=8f3c203bd1e523c2&xhr=1&t1442752250613=nocache
-    $params1 = array(
+    // http://fritz.box/internet/dsl_stats_tab.lua?update=mainDiv&sid=57f66df7e296aecc&xhr=1&t1442752250613=nocache
+    $link_dsl_stats = array(
       'getpage'         => '/internet/dsl_stats_tab.lua',
       'update'          => 'mainDiv',
     );
-
-    // http://fritz.box/internet/inetstat_monitor.lua?sid=7c02d41d7076cd6c&
-    $params2 = array(
+    
+    // http://fritz.box/internet/inetstat_monitor.lua?sid=3173ce1fdbaa78df&useajax=1&action=get_graphic
+    $link_inet_stats = array(
       'getpage'         => '/internet/inetstat_monitor.lua',
+      'useajax'         => '1',
       'action'          => 'get_graphic',
-    );
+    );       
 
-    // http://fritz.box/internet/dsl_overview.lua?sid=d24847de3de91640&useajax=1&action=get_data&xhr=1&t1442743103148=nocache
-    $params3 = array(
+    // http://fritz.box/internet/dsl_overview.lua?sid=472de9c30cce4edb&useajax=1&action=get_data&xhr=1&t1442743103148=nocache
+    $link_dslam_stats = array(
       'getpage'         => '/internet/dsl_overview.lua',
       'useajax'         => '1',
       'action'          => 'get_data',
     );
 
-    // Append all data to one string
-    $html  = $fritz->doGetRequest($params1);
-    $html .= $fritz->doGetRequest($params2);
-    $html .= $fritz->doGetRequest($params3);
+    // Get http data of all links
+    $dsl_stats  = $fritz->doGetRequest($link_dsl_stats);
+    $inet_stats = $fritz->doGetRequest($link_inet_stats);
+    $dslam_stats = $fritz->doGetRequest($link_dslam_stats);    
   }
   catch (Exception $e)
-  {
+  {  
    echo $e->getMessage();
   }
 
@@ -122,6 +123,7 @@ ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFT
             $dslam;                // 26
 
 //################ RegEx ##############################################################################################
+//->I use https://regex101.com/ for verification of my regex strings
 
   // DSL Stats  
   /*
@@ -135,7 +137,7 @@ ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFT
           8.      [685-690]       `28894`   Box Leitungskapazitaet UL
   */
 
-  if (preg_match ('/.*?<td class="c3">(.*?)<\/td>.*?<td class="c4">(.*?)<\/td>.*?<td class="c3">(.*?)<\/td>.*?<td class="c4">(.*?)<\/td>.*?<td class="c3">(.*?)<\/td>.*?<td class="c4">(.*?)<\/td>.*?<td class="c3">(.*?)<\/td>.*?<td class="c4">(.*?)<\/td>/', $html, $hits))
+  if (preg_match ('/.*?<td class="c3">(.*?)<\/td>.*?<td class="c4">(.*?)<\/td>.*?<td class="c3">(.*?)<\/td>.*?<td class="c4">(.*?)<\/td>.*?<td class="c3">(.*?)<\/td>.*?<td class="c4">(.*?)<\/td>.*?<td class="c3">(.*?)<\/td>.*?<td class="c4">(.*?)<\/td>/', $dsl_stats, $hits))
   {
      $logline .= $hits[1].','.$hits[2].','.$hits[3].','.$hits[4].','.$hits[5].','.$hits[6].','.$hits[7].','.$hits[8].',';
   }
@@ -152,13 +154,13 @@ ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFT
                 4.      [1647-1649]     `10`    Leitungsdaempfung UL
   */
 
-  if (preg_match ('/.*?abstandsmarge.*?<td class="c3">(.*?)<\/td>.*?<td class="c4">(.*?)<\/td>.*Leitungsd.*?<td class="c3">(.*?)<\/td>.*?<td class="c4">(.*?)<\/td>.*/', $html, $hits))
+  if (preg_match ('/.*?abstandsmarge.*?<td class="c3">(.*?)<\/td>.*?<td class="c4">(.*?)<\/td>.*Leitungsd.*?<td class="c3">(.*?)<\/td>.*?<td class="c4">(.*?)<\/td>.*/', $dsl_stats, $hits))
   {
      $logline .= $hits[1].','.$hits[2].','.$hits[3].','.$hits[4].',';
   }
   else
   {
-         $logline .= '0,0,0,0,';
+     $logline .= '0,0,0,0,';
   }
 
   // DSL Fehler  
@@ -173,7 +175,7 @@ ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFT
                 8.      [2833-2834]     `2`     V-Stelle CRC/15min
   */
 
-  if (preg_match ('/.*?<td class="c1">FRITZ!Box.*?\n.*?<td class="c2">(.*?)<\/td>\n<td class="c3">(.*?)<\/td>\n<td class="c4">(.*?)<\/td>\n<td class="c5">(.*?)<\/td>.*?\n.*?\n.*?<td class="c1">Vermittlungsstelle.*?\n.*?<td class="c2">(.*?)<\/td>\n<td class="c3">(.*?)<\/td>.*?<td class="c4">(.*?)<\/td>.*?\n<td class="c5">(.*?)<\/td>/', $html, $hits))
+  if (preg_match ('/.*?<td class="c1">FRITZ!Box.*?\n.*?<td class="c2">(.*?)<\/td>\n<td class="c3">(.*?)<\/td>\n<td class="c4">(.*?)<\/td>\n<td class="c5">(.*?)<\/td>.*?\n.*?\n.*?<td class="c1">Vermittlungsstelle.*?\n.*?<td class="c2">(.*?)<\/td>\n<td class="c3">(.*?)<\/td>.*?<td class="c4">(.*?)<\/td>.*?\n<td class="c5">(.*?)<\/td>/', $dsl_stats, $hits))
   {
      $logline .= $hits[1].','.$hits[2].','.$hits[3].','.$hits[4].','.$hits[5].','.$hits[6].','.$hits[7].','.$hits[8].',';
   }
@@ -184,18 +186,21 @@ ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFT
 
   // Upload + Download
 /* 
-
-          1.      [359-364]       `30104` Upload
-          2.      [503-508]       `52098` Download
+			399-481	`311,19,16352,2951,728,38,19,57,985,1538,7349,12725,227,896,550,57,587,0,1021,19168`
+			501-596	`249,317,219,408,1042,4538,236,861,984,15126,1224,169,473,5942,10259,139311,153445,4662,5825,594`
   */
 
-  if (preg_match ('/.*?prio_default_bps": "(.*?),.*?\n.*?"ds_current_bps": "(.*?),/', $html, $hits))
+  if (preg_match ('/.*?prio_default_bps":[[](.*?)[]],"ds_current_bps":[[](.*?)[]],"/', $inet_stats, $hits))
   {
-     $logline .= (floatval($hits[1])/1000).','.(floatval($hits[2])/1000).',';
+  	 $arr1 = explode(',', $hits[1]);
+     $arr2 = explode(',', $hits[2]);
+   
+     // take first entry (the last value in timeline)
+     $logline .= (floatval($arr1[0])/1000).','.(floatval($arr2[0])/1000).',';
   }
   else
   {
-         $logline .= '0,0,';
+     $logline .= '0,0,';
   }
 
  // IPs
@@ -205,7 +210,7 @@ ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFT
           3.    [19300-19315]   `217.237.150.188` DNS2
   */
 
-  if (preg_match ('/.*?IP-Adresse: (.*?)<\/span>.*?\n.*?\n.*?\n<td class="tdinfo">(.*?) .*?<br>(.*?) /', $html, $hits))
+  if (preg_match ('/.*?IP-Adresse: (.*?)<\/span>.*?\n.*?\n.*?\n<td class="tdinfo">(.*?) .*?<br>(.*?) /', $inet_stats, $hits))
   {
      $logline .= $hits[1].','.$hits[2].','.$hits[3].',';
   }
@@ -214,24 +219,16 @@ ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFT
      $logline .= '0,0,0,';
   }
 
-  // DSLAM
-/* 
-					1.	[43-51]	`Broadcom`
-					2.	[55-61]	`164.97`
-					3.	[65-77]	`B5004244434D`
-					4.	[81-89]	`7631302E`
-					5.	[93-95]	`00`
-  */
-
-  if (preg_match ('/.*?"dslam": "(.*?)<br>(.*?)<br>(.*?)<br>(.*?)<br>(.*?)", /', $html, $hits))
+  
+  if (preg_match ('/.*?span>(.*?)<br>(.*?)".*Line-ID: (.*?)","mode":"(.*?)"/', $dslam_stats, $hits))
   {
-     $logline .= $hits[1].' '.$hits[2].' '.$hits[3].' '.$hits[4].' '.$hits[5];
+     $logline .= $hits[1].' '.$hits[2].' '.$hits[3].' '.$hits[4];
   }
   else
   {
      $logline .= '0';
   }
-
+    
 //#####################################################################################################################
 
 // Write file
