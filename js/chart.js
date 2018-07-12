@@ -178,7 +178,7 @@ $(function ()
                         isZoomed:false,           
                     },
         title: {
-            text: 'DSL Monitor v2.1'
+            text: 'DSL Monitor v2.2'
         },
         scrollbar: {
                 liveRedraw: false
